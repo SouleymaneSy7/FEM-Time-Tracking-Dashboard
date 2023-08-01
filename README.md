@@ -58,8 +58,8 @@ This is the Screenshot of my work!
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/time-tracking-dashboardvue-js-vue-router-compositon-api-sassvite-YgicxFfWgy))
+- Live Site URL: [Live site URL here](https://fem-time-tracking-dashboard-gamma.vercel.app/)
 
 ## Author
 
