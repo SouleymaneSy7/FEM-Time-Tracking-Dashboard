@@ -1,0 +1,312 @@
+@use "./reset";
+
+//=================================
+//      CSS Customs Variables
+//=================================
+
+:root {
+  // Colors
+  --blue: hsl(246, 80%, 60%);
+  --light-orange: hsl(15, 100%, 70%);
+  --soft-blue: hsl(195, 74%, 62%);
+  --light-red: hsl(348, 100%, 68%);
+  --lime-green: hsl(145, 58%, 55%);
+  --violet: hsl(264, 64%, 52%);
+  --soft-orange: hsl(43, 84%, 65%);
+
+  // Neutral Colors
+  --very-dark-blue-accent: 226, 43%, 10%;
+  --very-dark-blue: hsl(var(--very-dark-blue-accent));
+  --dark-blue-accent: 235, 46%, 20%;
+  --dark-blue: hsl(var(--dark-blue-accent));
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --white: hsl(0, 0%, 100%);
+
+  // Font Family
+  --font-rubik: "Rubik", sans-serif;
+
+  // Font Weight
+  --fw-thin: 300;
+  --fw-normal: 400;
+  --fw-bold: 500;
+
+  // Font Size
+  --fs-8: 0.5rem;
+  --fs-10: 0.625rem;
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-30: 1.875rem;
+  --fs-32: 2rem;
+  --fs-40: 2.5rem;
+  --fs-48: 3rem;
+  --fs-50: 3.125rem;
+
+  // Container Width
+  --max-width: 75rem;
+}
+
+//=============================
+//      Scrollbar Customs
+//=============================
+
+body {
+  font-family: var(--font-rubik);
+  color: var(--white);
+
+  background-color: var(--very-dark-blue);
+
+  padding: var(--fs-50) var(--fs-20);
+  overflow-x: hidden;
+}
+
+//=============================
+//      Utility Classes
+//=============================
+
+.profile__name {
+  font-size: clamp(var(--fs-20), 3vw + 1rem, var(--fs-40));
+  font-weight: var(--fw-thin);
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.profile__report {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-normal);
+  color: var(--pale-blue);
+  margin-block-end: var(--fs-8);
+}
+
+.link {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-normal);
+  color: var(--desaturated-blue);
+
+  transition: color 250ms ease-out;
+
+  &:is(:active, :hover, :focus) {
+    color: var(--white);
+  }
+}
+
+.card__title {
+  font-size: clamp(var(--fs-16), 1vw + 1rem, var(--fs-18));
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+}
+
+.card__current-number {
+  font-size: clamp(var(--fs-32), 3vw + 1rem, var(--fs-48));
+  font-weight: var(--fw-thin);
+  color: var(--white);
+}
+
+.card__previous-number {
+  font-size: clamp(var(--fs-14), 0.8vw + 1rem, var(--fs-16));
+  font-weight: var(--fw-normal);
+  color: var(--pale-blue);
+}
+
+//==================
+// 			Header
+//==================
+
+.header-container {
+  --max-width: 25rem;
+  width: min(100%, var(--max-width));
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--dark-blue);
+  border-radius: 1rem;
+
+  margin-inline: auto;
+}
+
+//==================
+// 			Profile
+//==================
+
+.profile-container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background-color: var(--blue);
+  border-radius: 1rem;
+  box-shadow: 0 0.3125rem 1rem hsl(var(--very-dark-blue-accent), 0.1);
+
+  padding: var(--fs-32);
+}
+
+.profile__img {
+  width: 5.3125rem;
+  height: 5.3125rem;
+
+  border-radius: 50%;
+  border: 0.25rem solid var(--white);
+}
+
+//==================
+// 			Navbar
+//==================
+
+.navbar {
+  padding: var(--fs-30) var(--fs-24) var(--fs-24);
+
+  & ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+//==================
+// 			Card
+//==================
+
+.card-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  --max-width: 25rem;
+
+  position: relative;
+  width: min(100%, var(--max-width));
+
+  background-color: var(--light-orange);
+  border-radius: 1rem 1rem 2rem 2rem;
+
+  margin-inline: auto;
+}
+
+.card .card__img {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  height: 2.5rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+
+  padding: 0 1.25rem 0 0;
+
+  overflow: hidden;
+  & img {
+    position: relative;
+    top: -0.625rem;
+
+    width: 4.375rem;
+    height: 4.375rem;
+  }
+}
+
+.card:nth-child(2) {
+  background-color: var(--soft-blue);
+}
+
+.card:nth-child(3) {
+  background-color: var(--light-red);
+}
+
+.card:nth-child(4) {
+  background-color: var(--lime-green);
+}
+
+.card:nth-child(5) {
+  background-color: var(--violet);
+}
+
+.card:nth-child(6) {
+  background-color: var(--soft-orange);
+}
+
+.card__main {
+  width: 100%;
+
+  background-color: var(--dark-blue);
+  border-radius: 1rem;
+
+  padding: var(--fs-24);
+  cursor: pointer;
+
+  & > * + * {
+    margin-block-start: 0.5rem;
+  }
+
+  & .card-main__top,
+  .card-main__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+//==============================
+// 			Responsive 1100px
+//==============================
+
+@media only screen and (min-width: 68.75em) {
+  body {
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+  }
+
+  .header-container {
+    --max-width: 15.625rem;
+    margin: 0;
+  }
+
+  .profile-container,
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-container {
+    flex: 1 1 80%;
+  }
+
+  .navbar ul li {
+    margin: 0.5rem 0;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-grow: 1;
+  }
+
+  .card {
+    --max-width: 18.75rem;
+    margin: 0;
+
+    & .card__main > * + * {
+      margin-block-start: 1rem;
+    }
+
+    .card-main__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+
+      > * + * {
+        margin-block-start: 1rem;
+      }
+    }
+  }
+}
